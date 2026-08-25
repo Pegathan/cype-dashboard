@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const config = require('./config');
 const nodesStore = require('./nodesStore');
+const requestorsStore = require('./requestorsStore');
 
 const app = express();
 const DIST_DIR = path.join(__dirname, '..', 'dist');
@@ -17,6 +18,16 @@ app.get('/api/nodes', (req, res) => {
     .catch((error) => {
       console.error('Failed to retrieve Pega nodes:', error.message);
       res.status(502).json({ error: 'Unable to retrieve Pega nodes' });
+    });
+});
+
+app.get('/api/nodes/:nodeId/requestors', (req, res) => {
+  requestorsStore
+    .getNodeRequestors(req.params.nodeId)
+    .then((requestors) => res.json({ requestors }))
+    .catch((error) => {
+      console.error(`Failed to retrieve requestors for node ${req.params.nodeId}:`, error.message);
+      res.status(502).json({ error: 'Unable to retrieve node requestors' });
     });
 });
 

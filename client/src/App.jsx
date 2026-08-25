@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import Widget from './components/Widget.jsx';
 import PlatformNodes from './components/PlatformNodes.jsx';
+import BrowserRequestors from './components/BrowserRequestors.jsx';
 
 const DEFAULT_LOGIN_URL = 'https://localhost:8443/prweb/';
 
@@ -59,6 +60,7 @@ export default function App() {
           {/* <span className="widget-hint">{loginUrl}</span> */}
         </Widget>
         <PlatformNodes />
+        <BrowserRequestors />
       </main>
     </div>
   );

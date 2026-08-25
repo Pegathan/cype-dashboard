@@ -229,3 +229,33 @@ body {
   background: #fce3e3;
   color: #a12222;
 }
+
+.requestor-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.requestor-list-scrollable {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.requestor-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.requestor-row:last-child {
+  border-bottom: 0;
+}
+
+.requestor-row strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  font-weight: 600;
+}
