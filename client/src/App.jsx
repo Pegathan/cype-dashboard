@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
 import Widget from './components/Widget.jsx';
 import PlatformNodes from './components/PlatformNodes.jsx';
 
@@ -6,6 +7,17 @@ const DEFAULT_LOGIN_URL = 'https://localhost:8443/prweb/';
 
 export default function App() {
   const [loginUrl, setLoginUrl] = useState(DEFAULT_LOGIN_URL);
+  const [isDarkMode, setIsDarkMode] = useState(() =>
+    window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
+  );
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = isDarkMode ? 'dark' : 'light';
+
+    return () => {
+      delete document.documentElement.dataset.theme;
+    };
+  }, [isDarkMode]);
 
   useEffect(() => {
     fetch('/api/config')
@@ -25,6 +37,15 @@ export default function App() {
           <h1>Pega 26.1</h1>
           <p>Local environment dashboard</p>
         </div>
+        <button
+          className="icon-button theme-toggle"
+          type="button"
+          aria-label={isDarkMode ? 'Enable light mode' : 'Enable dark mode'}
+          title={isDarkMode ? 'Enable light mode' : 'Enable dark mode'}
+          onClick={() => setIsDarkMode((darkMode) => !darkMode)}
+        >
+          {isDarkMode ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
+        </button>
       </header>
 
       <main className="widget-grid">
@@ -35,7 +56,7 @@ export default function App() {
           <a className="widget-link" href={loginUrl} target="_blank" rel="noreferrer">
             Go to Pega
           </a>
-          <span className="widget-hint">{loginUrl}</span>
+          {/* <span className="widget-hint">{loginUrl}</span> */}
         </Widget>
         <PlatformNodes />
       </main>
