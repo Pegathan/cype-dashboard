@@ -3,6 +3,8 @@ import { Moon, Sun } from 'lucide-react';
 import Widget from './components/Widget.jsx';
 import PlatformNodes from './components/PlatformNodes.jsx';
 import BrowserRequestors from './components/BrowserRequestors.jsx';
+import pegaLogo from './images/pega-logo.svg';
+import pegaLogoDark from './images/pega-logo-dark.svg';
 
 const DEFAULT_LOGIN_URL = 'https://localhost:8443/prweb/';
 
@@ -34,7 +36,8 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <div>
+        <img className="app-header-logo" src={isDarkMode ? pegaLogoDark : pegaLogo} alt="Pega" />
+        <div className="app-header-title">
           <h1>Pega 26.1</h1>
           <p>Local environment dashboard</p>
         </div>

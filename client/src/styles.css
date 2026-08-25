@@ -52,6 +52,17 @@ body {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.app-header-logo {
+  width: 128px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.app-header-title {
+  flex: 1;
+  margin-left: 20px;
+}
+
 .app-header h1 {
   margin: 0;
   font-size: 22px;
