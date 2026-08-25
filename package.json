@@ -1,0 +1,22 @@
+{
+  "name": "pega-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Home page dashboard for the local Pega 26.1 environment",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "serve": "npm run build && npm run start"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "react-dom": "^19.2.8",
+    "vite": "^5.4.8"
+  }
+}

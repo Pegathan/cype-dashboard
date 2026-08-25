@@ -1,0 +1,11 @@
+{
+  "pega": {
+    "loginUrl": "https://localhost:8443/prweb/",
+    "apiBaseUrl": "https://localhost:8443/prweb/api/v1",
+    "username": "administrator@pega.com",
+    "password": "install",
+    "allowSelfSignedCertificate": true,
+    "requestTimeoutMs": 15000,
+    "cacheTtlMs": 300000
+  }
+}
