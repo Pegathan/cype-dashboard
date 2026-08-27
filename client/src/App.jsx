@@ -38,7 +38,7 @@ export default function App() {
       <header className="app-header">
         <img className="app-header-logo" src={isDarkMode ? pegaLogoDark : pegaLogo} alt="Pega" />
         <div className="app-header-title">
-          <h1>Pega 26.1</h1>
+          <h1>CYPE</h1>
           <p>Local environment dashboard</p>
         </div>
         <button
@@ -58,7 +58,7 @@ export default function App() {
             Open the Pega Platform login screen of your local instance.
           </p>
           <a className="widget-link" href={loginUrl} target="_blank" rel="noreferrer">
-            Go to Pega
+            Basic Auth
           </a>
           {/* <span className="widget-hint">{loginUrl}</span> */}
         </Widget>

@@ -28,6 +28,8 @@ export default function PlatformNodes() {
 
   useEffect(() => {
     loadNodes();
+    const intervalId = setInterval(() => loadNodes(), 60000);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

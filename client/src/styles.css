@@ -270,3 +270,77 @@ body {
   font-size: 13px;
   font-weight: 600;
 }
+
+.requestor-row-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-button-small {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 20, 27, 0.5);
+  z-index: 100;
+}
+
+.overlay-panel {
+  width: 100%;
+  max-width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+  margin: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.overlay-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.overlay-details {
+  margin: 0;
+}
+
+.overlay-details-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.overlay-details-row:last-child {
+  border-bottom: 0;
+}
+
+.overlay-details-row dt {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.overlay-details-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+}

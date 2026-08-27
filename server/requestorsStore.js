@@ -1,22 +1,23 @@
 const pegaClient = require('./pegaClient');
 
-function extractRequestors(payload) {
+function extractRequestors(payload, nodeId) {
   const results = payload?.data?.result || [];
 
   return results.flatMap((result) => result.requestors || [])
     .map((requestor) => ({
+      nodeId,
       requestorType: requestor.requestor_type,
       requestorId: requestor.requestor_id,
       lastAccess: requestor.last_access,
       operatorId: requestor.operator_id
     }))
-    .filter((requestor) => requestor.requestorType === 'BROWSER');
+    .filter((requestor) => requestor.requestorType === 'BROWSER' && requestor.operatorId !== 'none');
 }
 
 function getNodeRequestors(nodeId) {
   return pegaClient
     .request(`/nodes/${encodeURIComponent(nodeId)}/requestors`)
-    .then(extractRequestors);
+    .then((payload) => extractRequestors(payload, nodeId));
 }
 
 module.exports = { getNodeRequestors };
