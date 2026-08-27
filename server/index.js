@@ -31,6 +31,16 @@ app.get('/api/nodes/:nodeId/requestors', (req, res) => {
     });
 });
 
+app.delete('/api/nodes/:nodeId/requestors/:requestorId', (req, res) => {
+  requestorsStore
+    .terminateRequestor(req.params.nodeId, req.params.requestorId)
+    .then((result) => res.json({ result }))
+    .catch((error) => {
+      console.error(`Failed to terminate requestor ${req.params.requestorId} on node ${req.params.nodeId}:`, error.message);
+      res.status(502).json({ error: 'Unable to terminate requestor' });
+    });
+});
+
 app.use(express.static(DIST_DIR));
 
 app.get('*', (req, res) => {

@@ -20,4 +20,10 @@ function getNodeRequestors(nodeId) {
     .then((payload) => extractRequestors(payload, nodeId));
 }
 
-module.exports = { getNodeRequestors };
+function terminateRequestor(nodeId, requestorId) {
+  return pegaClient
+    .request(`/nodes/${encodeURIComponent(nodeId)}/requestors/${encodeURIComponent(requestorId)}`, { method: 'DELETE' })
+    .then((payload) => payload?.data?.result?.[0] || null);
+}
+
+module.exports = { getNodeRequestors, terminateRequestor };

@@ -12,12 +12,12 @@ function authorizationHeader() {
 /**
  * Calls a Pega REST API resource (path relative to the configured API base URL).
  */
-function request(resourcePath) {
+function request(resourcePath, { method = 'GET' } = {}) {
   const url = new URL(apiBaseUrl.replace(/\/$/, '') + resourcePath);
   const client = url.protocol === 'https:' ? https : http;
 
   const options = {
-    method: 'GET',
+    method,
     headers: {
       'Content-Type': 'application/json',
       Authorization: authorizationHeader()

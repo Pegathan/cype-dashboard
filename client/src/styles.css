@@ -255,14 +255,22 @@ body {
 
 .requestor-row {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   padding: 10px 0;
   border-bottom: 1px solid var(--border);
 }
 
 .requestor-row:last-child {
   border-bottom: 0;
+}
+
+.requestor-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
 }
 
 .requestor-row strong {
@@ -281,6 +289,16 @@ body {
   width: 22px;
   height: 22px;
   flex: 0 0 auto;
+}
+
+.icon-button-danger {
+  border-color: #e3a3a3;
+  color: #a12222;
+}
+
+.icon-button-danger:hover:not(:disabled) {
+  background: #fce3e3;
+  color: #a12222;
 }
 
 .overlay-backdrop {
@@ -343,4 +361,53 @@ body {
   margin: 0;
   overflow-wrap: anywhere;
   text-align: right;
+}
+
+.overlay-text {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.overlay-error {
+  margin: 0 0 16px;
+  color: #a12222;
+  font-size: 13px;
+}
+
+.overlay-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.button {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--bg);
+}
+
+.button-danger {
+  border-color: #d64545;
+  background: #d64545;
+  color: #fff;
+}
+
+.button-danger:hover:not(:disabled) {
+  background: #b83a3a;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.6;
 }
