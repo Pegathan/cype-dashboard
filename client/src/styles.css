@@ -301,6 +301,18 @@ body {
   color: #a12222;
 }
 
+:root[data-theme="dark"] .icon-button-danger {
+  background: #d64545;
+  border-color: #d64545;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .icon-button-danger:hover:not(:disabled) {
+  background: #b83a3a;
+  border-color: #b83a3a;
+  color: #fff;
+}
+
 .overlay-backdrop {
   position: fixed;
   inset: 0;
