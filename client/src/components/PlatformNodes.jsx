@@ -10,9 +10,9 @@ export default function PlatformNodes() {
   const [nodes, setNodes] = useState([]);
   const [status, setStatus] = useState('loading');
 
-  function loadNodes(forceRefresh = false) {
+  function loadNodes() {
     setStatus('loading');
-    fetch(forceRefresh ? '/api/nodes?refresh=true' : '/api/nodes')
+    fetch('/api/nodes')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Unable to retrieve platform nodes');
@@ -42,7 +42,7 @@ export default function PlatformNodes() {
           type="button"
           aria-label="Refresh platform nodes"
           title="Refresh platform nodes"
-          onClick={() => loadNodes(true)}
+          onClick={() => loadNodes()}
           disabled={status === 'loading'}
         >
           <RefreshCw aria-hidden="true" size={18} />

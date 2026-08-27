@@ -5,7 +5,6 @@
     "username": "administrator@pega.com",
     "password": "install",
     "allowSelfSignedCertificate": true,
-    "requestTimeoutMs": 15000,
-    "cacheTtlMs": 300000
+    "requestTimeoutMs": 15000
   }
 }

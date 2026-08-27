@@ -13,7 +13,7 @@ app.get('/api/config', (req, res) => {
 
 app.get('/api/nodes', (req, res) => {
   nodesStore
-    .getNodes({ forceRefresh: req.query.refresh === 'true' })
+    .getNodes()
     .then((result) => res.json(result))
     .catch((error) => {
       console.error('Failed to retrieve Pega nodes:', error.message);

@@ -37,8 +37,7 @@ const config = {
       process.env.PEGA_ALLOW_SELF_SIGNED_CERT,
       pega.allowSelfSignedCertificate !== false
     ),
-    requestTimeoutMs: toNumber(process.env.PEGA_REQUEST_TIMEOUT_MS, pega.requestTimeoutMs || 15000),
-    cacheTtlMs: toNumber(process.env.PEGA_CACHE_TTL_MS, pega.cacheTtlMs || 300000)
+    requestTimeoutMs: toNumber(process.env.PEGA_REQUEST_TIMEOUT_MS, pega.requestTimeoutMs || 15000)
   }
 };
 

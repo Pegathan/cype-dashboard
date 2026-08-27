@@ -27,8 +27,7 @@ Edit `./config/default.json` and update the values under the `pega` object:
     "username": "your-pega-username",
     "password": "your-pega-password",
     "allowSelfSignedCertificate": true,
-    "requestTimeoutMs": 15000,
-    "cacheTtlMs": 300000
+    "requestTimeoutMs": 15000
   }
 }
 ```
@@ -41,7 +40,6 @@ Configuration fields:
 - `password`: Password for the configured Pega username.
 - `allowSelfSignedCertificate`: Set to `true` for local Pega environments that use a self-signed HTTPS certificate. Use `false` when the certificate is trusted.
 - `requestTimeoutMs`: Maximum time, in milliseconds, to wait for a Pega API request. The default is `15000`.
-- `cacheTtlMs`: How long, in milliseconds, node data is cached. The default is `300000` (5 minutes).
 
 For local or shared development, you can create `./config/local.json` with the same structure. Its `pega` values override `default.json`, and `local.json` is intended to remain uncommitted:
 
@@ -64,7 +62,6 @@ PEGA_API_USERNAME
 PEGA_API_PASSWORD
 PEGA_ALLOW_SELF_SIGNED_CERT
 PEGA_REQUEST_TIMEOUT_MS
-PEGA_CACHE_TTL_MS
 ```
 
 Use environment variables for credentials in automated or shared environments so passwords are not stored in source-controlled files.
