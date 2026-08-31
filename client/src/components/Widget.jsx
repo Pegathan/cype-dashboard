@@ -1,6 +1,6 @@
-export default function Widget({ title, subtitle, actions, children }) {
+export default function Widget({ title, subtitle, actions, children, className = '' }) {
   return (
-    <section className="widget">
+    <section className={`widget ${className}`.trim()}>
       <div className="widget-header">
         <div>
           <h2>{title}</h2>

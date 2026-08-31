@@ -81,6 +81,12 @@ body {
   gap: 20px;
 }
 
+.widget-wide {
+  grid-column: 1 / -1;
+  min-height: 680px;
+  display: none !important;
+}
+
 .widget {
   display: flex;
   flex-direction: column;
@@ -159,6 +165,16 @@ body {
   padding-top: 16px;
 }
 
+.widget-wide .widget-body {
+  align-items: stretch;
+}
+
+pega-embed {
+  display: block;
+  width: 100%;
+  min-height: 580px;
+}
+
 .widget-text {
   margin: 0;
   color: var(--text-muted);
@@ -167,7 +183,6 @@ body {
 }
 
 .widget-link {
-  margin-top: auto;
   padding: 10px 18px;
   background: var(--accent);
   border-radius: 10px;
@@ -179,6 +194,14 @@ body {
 
 .widget-link:hover {
   background: var(--accent-dark);
+}
+
+.widget-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .widget-hint {

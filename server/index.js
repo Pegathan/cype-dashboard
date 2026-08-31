@@ -8,7 +8,10 @@ const app = express();
 const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 app.get('/api/config', (req, res) => {
-  res.json({ pegaLoginUrl: config.pega.loginUrl });
+  res.json({
+    pegaLoginUrl: config.pega.loginUrl,
+    pegaOidcAuthUrl: config.pega.oidcAuthUrl
+  });
 });
 
 app.get('/api/nodes', (req, res) => {

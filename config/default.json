@@ -1,6 +1,7 @@
 {
   "pega": {
     "loginUrl": "https://localhost:8443/prweb/",
+    "oidcAuthUrl": "https://localhost:8443/prweb/PRAuth/GoogleOIDC",
     "apiBaseUrl": "https://localhost:8443/prweb/api/v1",
     "username": "administrator@pega.com",
     "password": "install",

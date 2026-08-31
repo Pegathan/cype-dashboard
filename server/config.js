@@ -30,6 +30,7 @@ const config = {
   port: toNumber(process.env.PORT, 3000),
   pega: {
     loginUrl: process.env.PEGA_LOGIN_URL || pega.loginUrl,
+    oidcAuthUrl: process.env.PEGA_OIDC_AUTH_URL || pega.oidcAuthUrl,
     apiBaseUrl: process.env.PEGA_API_BASE_URL || pega.apiBaseUrl,
     username: process.env.PEGA_API_USERNAME || pega.username,
     password: process.env.PEGA_API_PASSWORD || pega.password,
